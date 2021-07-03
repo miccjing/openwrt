@@ -16,4 +16,4 @@
 # Add a feed source
 git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
-sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default
+#sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default
