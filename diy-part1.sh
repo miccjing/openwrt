@@ -15,3 +15,4 @@
 
 # Add a feed source
 sed -i '$a src-git atmaterial https://github.com/miccjing/luci-theme-atmaterial' feeds.conf.default
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
