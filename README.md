@@ -1,5 +1,22 @@
 # Actions-OpenWrt
 
+```
+sudo apt-get update && \
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync && \
+rm -rf lede && \
+git clone https://github.com/coolsnowwolf/lede && \
+cd lede && \
+git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
+sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default && \
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
+sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
+sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
+sed -i 's/root::0:0:99999:7:::/root:$1$amAYzyeT$A31OVuVpiTaaFfVil8nSK.:18811:0:99999:7:::/g' package/base-files/files/etc/shadow && \
+./scripts/feeds update -a && \
+./scripts/feeds install -a && \
+make menuconfig
+```
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
 ![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
