@@ -11,7 +11,7 @@ git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-th
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
 sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default && \
 ./scripts/feeds update -a && \
-./scripts/feeds install -a && \
+./scripts/feeds install -a -f && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
 sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
