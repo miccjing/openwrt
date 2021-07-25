@@ -14,7 +14,8 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
-sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default
+#git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial
+#sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+#sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+sed -i '$a src-git micc https://github.com/miccjing/openwrt-package' feeds.conf.default
