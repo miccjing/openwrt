@@ -7,9 +7,7 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 rm -rf lede && \
 git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
-git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
-sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default && \
+sed -i '$a src-git micc https://github.com/miccjing/openwrt-package' feeds.conf.default && \
 ./scripts/feeds update -a && \
 ./scripts/feeds install -a -f && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
