@@ -10,15 +10,32 @@ cd lede && \
 git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
 sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default && \
+./scripts/feeds update -a && \
+./scripts/feeds install -a -f && \
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
+sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
+sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
+sed -i 's/root::0:0:99999:7:::/root:$1$amAYzyeT$A31OVuVpiTaaFfVil8nSK.:18811:0:99999:7:::/g' package/base-files/files/etc/shadow
+sed -i 's/'OpenWrt'/'RedmiAX6'/g' package/base-files/files/bin/config_generate && \
+make menuconfig
+```
+
+第二次编译
+```
+cd lede && \
+rm -rf .config && \
+git pull && \
 ./scripts/feeds clean -a && \
 ./scripts/feeds update -a && \
 ./scripts/feeds install -a -f && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
 sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
+sed -i 's/root::0:0:99999:7:::/root:$1$amAYzyeT$A31OVuVpiTaaFfVil8nSK.:18811:0:99999:7:::/g' package/base-files/files/etc/shadow
 sed -i 's/'OpenWrt'/'RedmiAX6'/g' package/base-files/files/bin/config_generate && \
 make menuconfig
 ```
+
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
 ![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
