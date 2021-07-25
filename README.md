@@ -9,7 +9,7 @@ git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
 sed -i '$a src-git micc https://github.com/miccjing/openwrt-package' feeds.conf.default && \
 ./scripts/feeds update -a && \
-./scripts/feeds install -a -f && \
+./scripts/feeds install -a && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
 sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
@@ -25,7 +25,7 @@ rm -rf .config && \
 git pull && \
 ./scripts/feeds clean -a && \
 ./scripts/feeds update -a && \
-./scripts/feeds install -a -f && \
+./scripts/feeds install -a && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
 sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
