@@ -17,9 +17,8 @@ sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generat
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
 sed -i 's/root::0:0:99999:7:::/root:$1$amAYzyeT$A31OVuVpiTaaFfVil8nSK.:18811:0:99999:7:::/g' package/base-files/files/etc/shadow && \
 sed -i 's/'OpenWrt'/'RedmiAX6'/g' package/base-files/files/bin/config_generate && \
-sed -i 's/'set wireless.default_radio${devidx}.encryption=none'/'set wireless.default_radio${devidx}.key=@1472580369
-			set wireless.default_radio${devidx}.encryption=sae-mixed
-EOF'/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh && \
+sed -i 's/'set wireless.default_radio${devidx}.encryption=none'/'set wireless.default_radio${devidx}.encryption=sae-mixed'/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh && \
+sed -i 's/'set wireless.default_radio${devidx}.encryption=none'/''/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh && \
 make menuconfig
 ```
 
