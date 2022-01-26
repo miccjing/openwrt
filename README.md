@@ -9,7 +9,7 @@ git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
 git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
-sed -i '$a src-git bypass https://github.com/garypang13/openwrt-bypass' feeds.conf.default && \
+sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default && \
 ./scripts/feeds update -a && \
 ./scripts/feeds install -a && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
