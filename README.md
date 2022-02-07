@@ -62,6 +62,7 @@ Build OpenWrt using GitHub Actions
 
 ## Acknowledgments
 
+- [bypass](https://github.com/kiddin9/openwrt-bypass)
 - [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub Actions](https://github.com/features/actions)
 - [OpenWrt](https://github.com/openwrt/openwrt)
