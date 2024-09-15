@@ -1,7 +1,6 @@
 # Actions-OpenWrt
 
 ```
-
 git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
 git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
