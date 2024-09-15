@@ -5,16 +5,14 @@
 git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
 git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
-git revert edbd8d2e9839357f3a4f0a06174d243f362b1544 && \
+sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default && \
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
-sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-packages' feeds.conf.default && \
+sed -i '$a src-git 5gmodem https://github.com/Siriling/5G-Modem-Support.git' feeds.conf.default && \
 ./scripts/feeds update -a && \
 ./scripts/feeds install -a && \
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate && \
+sed -i 's/255.255.255.0/255.0.0.0/g' package/base-files/files/bin/config_generate && \
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile && \
-sed -i 's/:0:0:99999:7:::/$1$amAYzyeT$A31OVuVpiTaaFfVil8nSK.:18811:0:99999:7:::/g' package/base-files/files/etc/shadow && \
-sed -i 's/'OpenWrt'/'LEDE'/g' package/base-files/files/bin/config_generate && \
-package/kernel/mac80211/files/lib/wifi/mac80211.sh 
 make menuconfig
 ```
 
