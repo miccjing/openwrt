@@ -3,7 +3,7 @@
 ```
 git clone https://github.com/coolsnowwolf/lede && \
 cd lede && \
-git clone https://github.com/miccjing/luci-theme-atmaterial package/lean/luci-theme-atmaterial && \
+git clone https://github.com/miccjing/luci-theme-atmaterial package/micc/luci-theme-atmaterial && \
 sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default && \
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default && \
 sed -i '$a src-git 5gmodem https://github.com/Siriling/5G-Modem-Support.git' feeds.conf.default && \
